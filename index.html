@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#101b2d" />
+  <meta name="description" content="24 волшебные свечи, 72 промпта для преподавателей английского. Новая свеча загорается каждый день в 10:00 по Москве." />
+  <meta property="og:title" content="The Great Prompt Hall · 24 свечи вдохновения" />
+  <meta property="og:description" content="Волшебный адвент для преподавателей английского: три промпта каждый день." />
+  <title>The Great Prompt Hall — адвент для преподавателей</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script src="./js/app.js" type="module"></script>
+</head>
+<body>
+  <div class="site-background" aria-hidden="true"></div>
+  <div class="site-shade" aria-hidden="true"></div>
+  <div class="atmosphere" aria-hidden="true"><span class="fog fog-one"></span><span class="fog fog-two"></span><div class="stars" id="stars"></div></div>
+  <div class="page-shell" id="page-shell">
+    <header class="hero">
+      <div class="eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-star">✦</span><span>DECEMBER ADVENT · 2026</span><span class="eyebrow-star">✦</span><span class="eyebrow-line"></span></div>
+      <div class="crest" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 7C60 15 76 17 85 18V51C85 71 66 85 50 93C34 85 15 71 15 51V18C24 17 40 15 50 7Z" stroke="currentColor" stroke-width="1.5"/><path d="M50 17C58 23 70 25 75 26V50C75 64 63 76 50 82C37 76 25 64 25 50V26C30 25 42 23 50 17Z" stroke="currentColor" stroke-width=".75"/><path d="M50 30V70M30 50H70M36 36L64 64M64 36L36 64" stroke="currentColor" stroke-width=".8"/><path d="m50 27 5 17 17 6-17 5-5 17-6-17-17-5 17-6 6-17Z" fill="currentColor" opacity=".92"/><circle cx="50" cy="50" r="5" fill="#17233A"/></svg></div>
+      <p class="subtitle">24 DAYS OF CHRISTMAS MAGIC</p>
+      <h1>THE GREAT <em>PROMPT</em> HALL</h1>
+      <p class="hero-ru">Зал волшебных промптов</p>
+      <div class="hero-rule" aria-hidden="true"><span>✦</span></div>
+      <p class="hero-copy">24 свечи · 72 идеи для ваших уроков английского</p>
+      <p class="hero-instructions">Найдите доступную свечу, прикоснитесь к ней и откройте три новых промпта.</p>
+      <div class="hero-pills"><span><span class="gold-dot"></span> 1—24 ДЕКАБРЯ</span><span><span class="gold-dot"></span> КАЖДЫЙ ДЕНЬ В 10:00 МСК</span></div>
+    </header>
+
+    <main>
+      <section class="calendar-section" aria-labelledby="calendar-title">
+        <div class="calendar-section-title" id="calendar-title"><span class="ornament">✧</span> THE FLOATING CANDLES <span class="ornament">✧</span></div>
+        <div class="progress-line" role="status" aria-live="polite">
+          <span id="progress-count">— из 24 свечей доступны</span>
+          <span class="progress-rail" aria-hidden="true"><span id="progress-fill"></span></span>
+          <span id="next-unlock">Следующее открытие — в 10:00 МСК</span>
+        </div>
+        <div class="candles-grid" id="candles-grid" aria-label="Календарь из 24 свечей"></div>
+      </section>
+    </main>
+
+    <footer class="footer"><span class="footer-ornament">✦</span><span>MAGIC BEGINS WITH AN IDEA</span><span class="footer-ornament">✦</span><small>Создано с любовью к преподаванию · 2026</small></footer>
+  </div>
+
+  <div class="modal-backdrop" id="modal-backdrop" hidden>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-intro" tabindex="-1" id="prompt-modal">
+      <div class="modal-corners" aria-hidden="true"></div>
+      <button class="modal-close" id="modal-close" type="button" aria-label="Закрыть окно">×</button>
+      <header class="modal-header">
+        <span class="modal-super">THE GREAT PROMPT HALL</span>
+        <div class="modal-date" id="modal-date">1 декабря</div>
+        <div class="modal-divider" aria-hidden="true"><span>✦</span></div>
+        <h2 id="modal-title">Магия начинается</h2>
+        <p id="modal-intro">Три промпта для создания рабочих листов по английскому языку.</p>
+      </header>
+      <div id="modal-prompts" class="modal-prompts"></div>
+      <div class="modal-footer"><button type="button" class="modal-nav" id="modal-prev">← Предыдущая свеча</button><span id="modal-pagination">01 / 24</span><button type="button" class="modal-nav" id="modal-next">Следующая свеча →</button></div>
+    </section>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="glow-layer" class="glow-layer" aria-hidden="true"></div>
+</body>
+</html>
